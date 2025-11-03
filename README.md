@@ -1,5 +1,49 @@
 # Marstek BLE Gateway
 
+> ## 🚫 **PROJECT DEPRECATED**
+>
+> **This project is no longer maintained.** Please use the superior approach below instead.
+>
+> ### Why This Project Is Abandoned
+>
+> This ESPHome gateway package required a dedicated ESP32 device running custom firmware to bridge BLE communication from Marstek batteries to Home Assistant. While functional, this approach had several limitations:
+>
+> - **Single battery limitation**: Each gateway typically supported one battery
+> - **Complex setup**: Required custom ESPHome configuration and package management
+> - **Limited auto-discovery**: Manual configuration was needed for battery pairing
+> - **Dedicated hardware**: Required a separate ESP32 just for this integration
+>
+> ### ✅ Recommended Alternative
+>
+> **Use [ha-marstek-ble](https://github.com/jaapp/ha-marstek-ble)** - A native Home Assistant integration that connects directly via BLE.
+>
+> **Key advantages:**
+> - **Multiple batteries**: Connect multiple Marstek batteries through a single ESP32 Bluetooth Proxy
+> - **Better auto-discovery**: Batteries are automatically discovered and added to Home Assistant
+> - **Simpler setup**: Native Home Assistant integration with standard BLE proxy
+> - **Reusable hardware**: Your ESP32 can serve as a general-purpose [ESPHome Bluetooth Proxy](https://esphome.io/components/bluetooth_proxy) for all BLE devices
+> - **More reliable**: Direct BLE integration without custom gateway firmware
+>
+> ### Migration Steps
+>
+> 1. **Set up an ESPHome Bluetooth Proxy** on your ESP32:
+>    - Follow the [ESPHome Bluetooth Proxy guide](https://esphome.io/components/bluetooth_proxy)
+>    - Any ESP32 device can serve as a proxy (no custom firmware needed)
+>
+> 2. **Install the ha-marstek-ble integration**:
+>    - Install from [GitHub](https://github.com/jaapp/ha-marstek-ble)
+>    - Batteries will auto-discover through your BLE proxy
+>
+> 3. **Remove this gateway**: The dedicated ESPHome gateway is no longer needed
+>
+> ---
+>
+> ## ⚠️ Legacy Documentation Below
+>
+> The documentation below is preserved for historical reference only.
+>
+> ---
+
 > ⚠️ **EXPERIMENTAL** - Use at your own risk
 
 ESPHome package for Marstek Venus E energy storage systems. Integrates with Home Assistant without cloud connectivity.
